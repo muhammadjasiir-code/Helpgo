@@ -1,0 +1,53 @@
+[13-Jul-2026 09:29:29 UTC] PHP Warning:  require_once(config.php): Failed to open stream: No such file or directory in /home/lchwnsbw/public_html/rider/grocery_orders.php on line 2
+[13-Jul-2026 09:29:29 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/lchwnsbw/public_html/rider/grocery_orders.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/lchwnsbw/public_html/rider/grocery_orders.php on line 2
+[13-Jul-2026 09:29:34 UTC] PHP Warning:  require_once(config.php): Failed to open stream: No such file or directory in /home/lchwnsbw/public_html/rider/grocery_orders.php on line 2
+[13-Jul-2026 09:29:34 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/lchwnsbw/public_html/rider/grocery_orders.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/lchwnsbw/public_html/rider/grocery_orders.php on line 2
+[13-Jul-2026 09:29:43 UTC] PHP Warning:  require_once(config.php): Failed to open stream: No such file or directory in /home/lchwnsbw/public_html/rider/grocery_orders.php on line 2
+[13-Jul-2026 09:29:43 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/lchwnsbw/public_html/rider/grocery_orders.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/lchwnsbw/public_html/rider/grocery_orders.php on line 2
+[13-Jul-2026 09:31:06 UTC] PHP Warning:  require_once(config.php): Failed to open stream: No such file or directory in /home/lchwnsbw/public_html/rider/grocery_orders.php on line 2
+[13-Jul-2026 09:31:06 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/lchwnsbw/public_html/rider/grocery_orders.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/lchwnsbw/public_html/rider/grocery_orders.php on line 2
+[13-Jul-2026 14:54:50 UTC] PHP Warning:  require_once(config.php): Failed to open stream: No such file or directory in /home/lchwnsbw/public_html/rider/grocery_orders.php on line 2
+[13-Jul-2026 14:54:50 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/lchwnsbw/public_html/rider/grocery_orders.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/lchwnsbw/public_html/rider/grocery_orders.php on line 2
+[22-Jul-2026 09:21:24 UTC] PHP Warning:  require_once(/home/lchwnsbw/public_html/rider/config.php): Failed to open stream: No such file or directory in /home/lchwnsbw/public_html/rider/order_grocery.php on line 13
+[22-Jul-2026 09:21:24 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/lchwnsbw/public_html/rider/config.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/lchwnsbw/public_html/rider/order_grocery.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/lchwnsbw/public_html/rider/order_grocery.php on line 13
+[22-Jul-2026 09:21:27 UTC] PHP Warning:  require_once(/home/lchwnsbw/public_html/rider/config.php): Failed to open stream: No such file or directory in /home/lchwnsbw/public_html/rider/order_grocery.php on line 13
+[22-Jul-2026 09:21:27 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/lchwnsbw/public_html/rider/config.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/lchwnsbw/public_html/rider/order_grocery.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/lchwnsbw/public_html/rider/order_grocery.php on line 13
+[22-Jul-2026 09:21:31 UTC] PHP Warning:  require_once(/home/lchwnsbw/public_html/rider/config.php): Failed to open stream: No such file or directory in /home/lchwnsbw/public_html/rider/order_grocery.php on line 13
+[22-Jul-2026 09:21:31 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/lchwnsbw/public_html/rider/config.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/lchwnsbw/public_html/rider/order_grocery.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/lchwnsbw/public_html/rider/order_grocery.php on line 13
+[22-Jul-2026 09:21:40 UTC] PHP Warning:  require_once(/home/lchwnsbw/public_html/rider/config.php): Failed to open stream: No such file or directory in /home/lchwnsbw/public_html/rider/order_grocery.php on line 13
+[22-Jul-2026 09:21:40 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/lchwnsbw/public_html/rider/config.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/lchwnsbw/public_html/rider/order_grocery.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/lchwnsbw/public_html/rider/order_grocery.php on line 13
+[22-Jul-2026 09:21:43 UTC] PHP Warning:  require_once(/home/lchwnsbw/public_html/rider/config.php): Failed to open stream: No such file or directory in /home/lchwnsbw/public_html/rider/order_grocery.php on line 13
+[22-Jul-2026 09:21:43 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/lchwnsbw/public_html/rider/config.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/lchwnsbw/public_html/rider/order_grocery.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/lchwnsbw/public_html/rider/order_grocery.php on line 13
+[22-Jul-2026 09:57:25 UTC] PHP Parse error:  syntax error, unexpected identifier "o" in /home/lchwnsbw/public_html/rider/upload_bill.php on line 62
+[22-Jul-2026 09:57:32 UTC] PHP Parse error:  syntax error, unexpected identifier "o" in /home/lchwnsbw/public_html/rider/upload_bill.php on line 62
+[22-Jul-2026 09:58:14 UTC] PHP Parse error:  syntax error, unexpected identifier "o" in /home/lchwnsbw/public_html/rider/upload_bill.php on line 62
