@@ -1,0 +1,34 @@
+[10-Jul-2026 13:58:39 Asia/Kolkata] PHP Warning:  Undefined array key "rider_id" in /home/lchwnsbw/public_html/admin/orders.php on line 10
+[10-Jul-2026 13:58:39 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`lchwnsbw_helpto_db`.`orders`, CONSTRAINT `orders_ibfk_2` FOREIGN KEY (`rider_id`) REFERENCES `riders` (`id`) ON DELETE SET NULL) in /home/lchwnsbw/public_html/admin/orders.php:11
+Stack trace:
+#0 /home/lchwnsbw/public_html/admin/orders.php(11): mysqli_query(Object(mysqli), 'UPDATE orders S...')
+#1 {main}
+  thrown in /home/lchwnsbw/public_html/admin/orders.php on line 11
+[10-Jul-2026 14:00:32 Asia/Kolkata] PHP Warning:  Undefined array key "rider_id" in /home/lchwnsbw/public_html/admin/orders.php on line 10
+[10-Jul-2026 14:00:32 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`lchwnsbw_helpto_db`.`orders`, CONSTRAINT `orders_ibfk_2` FOREIGN KEY (`rider_id`) REFERENCES `riders` (`id`) ON DELETE SET NULL) in /home/lchwnsbw/public_html/admin/orders.php:11
+Stack trace:
+#0 /home/lchwnsbw/public_html/admin/orders.php(11): mysqli_query(Object(mysqli), 'UPDATE orders S...')
+#1 {main}
+  thrown in /home/lchwnsbw/public_html/admin/orders.php on line 11
+[10-Jul-2026 14:12:19 Asia/Kolkata] PHP Warning:  Undefined array key "rider_fare_per_km" in /home/lchwnsbw/public_html/admin/settings.php on line 16
+[10-Jul-2026 14:12:19 Asia/Kolkata] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in /home/lchwnsbw/public_html/config.php on line 82
+[11-Jul-2026 16:13:13 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: Data truncated for column 'payment_status' at row 1 in /home/lchwnsbw/public_html/admin/payments.php:25
+Stack trace:
+#0 /home/lchwnsbw/public_html/admin/payments.php(25): mysqli_query(Object(mysqli), 'UPDATE orders S...')
+#1 {main}
+  thrown in /home/lchwnsbw/public_html/admin/payments.php on line 25
+[23-Jul-2026 07:46:45 UTC] PHP Warning:  require_once(config.php): Failed to open stream: No such file or directory in /home/lchwnsbw/public_html/admin/admin_stores.php on line 2
+[23-Jul-2026 07:46:45 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/lchwnsbw/public_html/admin/admin_stores.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/lchwnsbw/public_html/admin/admin_stores.php on line 2
+[23-Jul-2026 07:46:51 UTC] PHP Warning:  require_once(config.php): Failed to open stream: No such file or directory in /home/lchwnsbw/public_html/admin/admin_stores.php on line 2
+[23-Jul-2026 07:46:51 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/lchwnsbw/public_html/admin/admin_stores.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/lchwnsbw/public_html/admin/admin_stores.php on line 2
+[23-Jul-2026 07:50:44 UTC] PHP Warning:  require_once(config.php): Failed to open stream: No such file or directory in /home/lchwnsbw/public_html/admin/admin_store_form.php on line 2
+[23-Jul-2026 07:50:44 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/lchwnsbw/public_html/admin/admin_store_form.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/lchwnsbw/public_html/admin/admin_store_form.php on line 2
