@@ -1,0 +1,83 @@
+[09-Jul-2026 07:31:50 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'lchwnsbw_helpto_db'@'localhost' (using password: YES) in /home/lchwnsbw/public_html/debug.php:22
+Stack trace:
+#0 /home/lchwnsbw/public_html/debug.php(22): mysqli_connect('localhost', 'lchwnsbw_helpto...', 'HELPGOOG123', 'lchwnsbw_helpto...')
+#1 {main}
+  thrown in /home/lchwnsbw/public_html/debug.php on line 22
+[09-Jul-2026 13:26:24 Asia/Kolkata] PHP Warning:  Undefined variable $rHDW in /home/lchwnsbw/public_html/config.php on line 18
+[09-Jul-2026 13:26:24 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'lchwnsbw_helpto_db'@'localhost' (using password: YES) in /home/lchwnsbw/public_html/config.php:21
+Stack trace:
+#0 /home/lchwnsbw/public_html/config.php(21): mysqli_connect('localhost', 'lchwnsbw_helpto...', '[h+T;_72NHg', 'lchwnsbw_helpto...')
+#1 /home/lchwnsbw/public_html/index.php(1): require_once('/home/lchwnsbw/...')
+#2 {main}
+  thrown in /home/lchwnsbw/public_html/config.php on line 21
+[09-Jul-2026 14:58:45 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: Field 'email' doesn't have a default value in /home/lchwnsbw/public_html/register.php:29
+Stack trace:
+#0 /home/lchwnsbw/public_html/register.php(29): mysqli_query(Object(mysqli), 'INSERT INTO use...')
+#1 {main}
+  thrown in /home/lchwnsbw/public_html/register.php on line 29
+[09-Jul-2026 15:06:58 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: Field 'email' doesn't have a default value in /home/lchwnsbw/public_html/register.php:29
+Stack trace:
+#0 /home/lchwnsbw/public_html/register.php(29): mysqli_query(Object(mysqli), 'INSERT INTO use...')
+#1 {main}
+  thrown in /home/lchwnsbw/public_html/register.php on line 29
+[09-Jul-2026 15:07:16 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: Field 'email' doesn't have a default value in /home/lchwnsbw/public_html/register.php:29
+Stack trace:
+#0 /home/lchwnsbw/public_html/register.php(29): mysqli_query(Object(mysqli), 'INSERT INTO use...')
+#1 {main}
+  thrown in /home/lchwnsbw/public_html/register.php on line 29
+[09-Jul-2026 17:14:24 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: Incorrect string value: '\xE0\xB4\xA4\xE0\xB5\x83...' for column `lchwnsbw_helpto_db`.`orders`.`drop_address` at row 1 in /home/lchwnsbw/public_html/petrol.php:43
+Stack trace:
+#0 /home/lchwnsbw/public_html/petrol.php(43): mysqli_query(Object(mysqli), 'INSERT INTO ord...')
+#1 {main}
+  thrown in /home/lchwnsbw/public_html/petrol.php on line 43
+[09-Jul-2026 12:01:28 UTC] PHP Warning:  Undefined variable $rHDW in /home/lchwnsbw/public_html/fix_admin.php on line 2
+[09-Jul-2026 12:01:28 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'lchwnsbw_helpto_db'@'localhost' (using password: YES) in /home/lchwnsbw/public_html/fix_admin.php:2
+Stack trace:
+#0 /home/lchwnsbw/public_html/fix_admin.php(2): mysqli_connect('localhost', 'lchwnsbw_helpto...', '[h+T;_72NHg', 'lchwnsbw_helpto...')
+#1 {main}
+  thrown in /home/lchwnsbw/public_html/fix_admin.php on line 2
+[09-Jul-2026 12:01:30 UTC] PHP Warning:  Undefined variable $rHDW in /home/lchwnsbw/public_html/fix_admin.php on line 2
+[09-Jul-2026 12:01:30 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'lchwnsbw_helpto_db'@'localhost' (using password: YES) in /home/lchwnsbw/public_html/fix_admin.php:2
+Stack trace:
+#0 /home/lchwnsbw/public_html/fix_admin.php(2): mysqli_connect('localhost', 'lchwnsbw_helpto...', '[h+T;_72NHg', 'lchwnsbw_helpto...')
+#1 {main}
+  thrown in /home/lchwnsbw/public_html/fix_admin.php on line 2
+[15-Jul-2026 19:50:17 UTC] PHP Parse error:  Unmatched '}' in /home/lchwnsbw/public_html/orders.php on line 13
+[15-Jul-2026 19:51:09 UTC] PHP Parse error:  Unmatched '}' in /home/lchwnsbw/public_html/orders.php on line 13
+[15-Jul-2026 19:51:43 UTC] PHP Parse error:  Unmatched '}' in /home/lchwnsbw/public_html/orders.php on line 13
+[15-Jul-2026 19:51:51 UTC] PHP Parse error:  Unmatched '}' in /home/lchwnsbw/public_html/orders.php on line 13
+[15-Jul-2026 19:53:17 UTC] PHP Parse error:  Unmatched '}' in /home/lchwnsbw/public_html/orders.php on line 13
+[15-Jul-2026 19:53:21 UTC] PHP Parse error:  Unmatched '}' in /home/lchwnsbw/public_html/orders.php on line 13
+[15-Jul-2026 19:54:42 UTC] PHP Parse error:  Unmatched '}' in /home/lchwnsbw/public_html/orders.php on line 13
+[15-Jul-2026 19:57:23 UTC] PHP Parse error:  Unmatched '}' in /home/lchwnsbw/public_html/orders.php on line 13
+[15-Jul-2026 19:57:25 UTC] PHP Parse error:  Unmatched '}' in /home/lchwnsbw/public_html/orders.php on line 13
+[15-Jul-2026 21:22:44 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /home/lchwnsbw/public_html/grocery_orders.php on line 2
+[15-Jul-2026 21:22:46 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /home/lchwnsbw/public_html/grocery_orders.php on line 2
+[15-Jul-2026 21:22:47 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /home/lchwnsbw/public_html/grocery_orders.php on line 2
+[15-Jul-2026 21:22:47 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /home/lchwnsbw/public_html/grocery_orders.php on line 2
+[15-Jul-2026 21:22:48 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /home/lchwnsbw/public_html/grocery_orders.php on line 2
+[17-Jul-2026 19:06:57 UTC] PHP Warning:  require_once(/home/lchwnsbw/public_html/db.php): Failed to open stream: No such file or directory in /home/lchwnsbw/public_html/petrol_orders.php on line 8
+[17-Jul-2026 19:06:57 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/lchwnsbw/public_html/db.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/lchwnsbw/public_html/petrol_orders.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/lchwnsbw/public_html/petrol_orders.php on line 8
+[17-Jul-2026 19:06:58 UTC] PHP Warning:  require_once(/home/lchwnsbw/public_html/db.php): Failed to open stream: No such file or directory in /home/lchwnsbw/public_html/petrol_orders.php on line 8
+[17-Jul-2026 19:06:58 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/lchwnsbw/public_html/db.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/lchwnsbw/public_html/petrol_orders.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/lchwnsbw/public_html/petrol_orders.php on line 8
+[18-Jul-2026 09:19:16 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/lchwnsbw/public_html/config.php on line 8
+[18-Jul-2026 09:19:18 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/lchwnsbw/public_html/config.php on line 8
+[18-Jul-2026 09:23:06 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/lchwnsbw/public_html/config.php on line 8
+[18-Jul-2026 09:23:37 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/lchwnsbw/public_html/config.php on line 8
+[18-Jul-2026 09:23:40 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/lchwnsbw/public_html/config.php on line 8
+[18-Jul-2026 09:23:51 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/lchwnsbw/public_html/config.php on line 8
+[18-Jul-2026 09:24:00 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/lchwnsbw/public_html/config.php on line 8
+[18-Jul-2026 10:19:29 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/lchwnsbw/public_html/config.php on line 8
+[26-Jul-2026 13:39:27 Asia/Kolkata] Image found: /assets/storebanner/1784961157_efb3f47a.jpg
+[26-Jul-2026 13:39:27 Asia/Kolkata] Image found: /assets/storebanner/1784961157_90b8da38.jpg
+[26-Jul-2026 13:39:27 Asia/Kolkata] Image NOT found, using fallback: https://placehold.co/200x200/F2EFE8/999?text=📦
+[26-Jul-2026 13:40:32 Asia/Kolkata] Image found: /assets/storebanner/1784961157_efb3f47a.jpg
+[26-Jul-2026 13:40:32 Asia/Kolkata] Image found: /assets/storebanner/1784961157_90b8da38.jpg
+[26-Jul-2026 13:40:32 Asia/Kolkata] Image NOT found, using fallback: https://placehold.co/200x200/F2EFE8/999?text=📦
+[03-Aug-2026 20:00:11 Asia/Kolkata] PLACE ORDER: address='', phone='', lat='0', lng='0'

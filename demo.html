@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>Live Rider Tracking – Demo (Geoapify)</title>
+
+<!-- Leaflet CSS & JS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<!-- Rotated marker plugin -->
+<script src="https://cdn.jsdelivr.net/npm/leaflet-rotatedmarker@0.2.0/leaflet.rotatedMarker.min.js"></script>
+
+<!-- Font Awesome for car icon -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+  body, html { margin:0; padding:0; height:100%; overflow:hidden; background:#e8e5df; font-family:'Segoe UI',sans-serif; }
+  #map { height:100vh; width:100vw; }
+
+  .info-bar {
+    position: absolute; top:20px; left:20px; right:20px; z-index:1000;
+    background: rgba(255,255,255,0.92); backdrop-filter: blur(10px);
+    border:1px solid rgba(0,0,0,0.08); border-radius:18px;
+    padding:14px 20px; color:#1a1a1a;
+    display:flex; justify-content:space-between; align-items:center;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  }
+  .info-bar .title { font-weight:700; font-size:17px; }
+  .info-bar .status { font-size:13px; font-weight:600; color:#0d7a5f; }
+  .info-bar .eta { font-size:12px; color:#555; }
+
+  .btn-back {
+    position:absolute; bottom:30px; left:50%; transform:translateX(-50%); z-index:1000;
+    background:#0d7a5f; color:white; border:none; border-radius:999px;
+    padding:12px 28px; font-weight:600; font-size:14px; text-decoration:none;
+    box-shadow:0 8px 20px rgba(0,0,0,0.15);
+    display:flex; align-items:center; gap:8px;
+  }
+</style>
+</head>
+<body>
+
+<div class="info-bar">
+  <div>
+    <div class="title">Petrol Rescue</div>
+    <div style="font-size:12px; opacity:0.7;">Order #DEMO123</div>
+  </div>
+  <div>
+    <div class="status" id="riderStatus">Rider is on the way</div>
+    <div class="eta" id="etaDisplay">2 min away</div>
+  </div>
+</div>
+
+<div id="map"></div>
+<a href="#" class="btn-back"><i class="fas fa-arrow-left"></i> Back</a>
+
+<script>
+// ══════════════ CONFIG ══════════════
+const GEOAPIFY_KEY = 'bbfe4d9dc1c747769131c828d0cf317b';
+
+// Demo route: Start -> End (coordinates in Kerala, India)
+const START = [10.8505, 76.2711]; // pickup point
+const END   = [10.8560, 76.2790]; // drop‑off ~1 km away
+
+// ══════════════ MAP ══════════════
+const map = L.map('map', {
+  zoomControl: true,
+  attributionControl: false
+}).setView([10.8530, 76.2750], 16);
+
+// Geoapify Carto tiles (light, Google Maps style)
+L.tileLayer('https://maps.geoapify.com/v1/tile/carto/{z}/{x}/{y}.png?apiKey=' + GEOAPIFY_KEY, {
+  maxZoom: 20,
+  attribution: '© Geoapify'
+}).addTo(map);
+
+// ══════════════ MARKERS ══════════════
+// Pickup & drop markers
+const pickupIcon = L.divIcon({
+  className: '',
+  html: '<div style="background:#0d7a5f;width:22px;height:22px;border-radius:50%;border:3px solid white;box-shadow:0 2px 6px rgba(0,0,0,0.3);"></div>',
+  iconSize: [22,22], iconAnchor: [11,11]
+});
+L.marker(START, {icon: pickupIcon}).addTo(map).bindPopup('Pickup');
+
+const dropIcon = L.divIcon({
+  className: '',
+  html: '<div style="background:#e74c3c;width:22px;height:22px;border-radius:50%;border:3px solid white;box-shadow:0 2px 6px rgba(0,0,0,0.3);"></div>',
+  iconSize: [22,22], iconAnchor: [11,11]
+});
+L.marker(END, {icon: dropIcon}).addTo(map).bindPopup('Drop-off');
+
+// Rider marker (animated car)
+const riderIcon = L.divIcon({
+  className: '',
+  html: `<div style="
+    width:48px; height:48px; background:#f4c542; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 6px 18px rgba(0,0,0,0.4);
+    transition: transform 0.1s linear;
+  ">
+    <i class="fas fa-car-side" style="color:#02140d; font-size:24px;"></i>
+  </div>`,
+  iconSize: [48, 48],
+  iconAnchor: [24, 24]
+});
+
+let riderMarker = null;
+let routePath = [];         // array of [lat, lng] points
+let currentPathIndex = 0;
+
+// ══════════════ FETCH REAL ROUTE FROM GEOAPIFY ══════════════
+async function loadRoute() {
+  try {
+    const response = await fetch(
+      `https://api.geoapify.com/v1/routing?waypoints=${START[0]},${START[1]}|${END[0]},${END[1]}&mode=drive&apiKey=${GEOAPIFY_KEY}`
+    );
+    const data = await response.json();
+
+    if (!data.features || data.features.length === 0) {
+      console.error('No route found');
+      // Fallback to a straight line if routing fails
+      routePath = [START, END];
+    } else {
+      // GeoJSON coordinates: [lng, lat] → convert to [lat, lng]
+      routePath = data.features[0].geometry.coordinates.map(c => [c[1], c[0]]);
+    }
+
+    // Draw the route polyline
+    L.polyline(routePath, {
+      color: '#0d7a5f',
+      weight: 6,
+      opacity: 0.7,
+      dashArray: '10, 6'
+    }).addTo(map);
+
+    // Fit map to show the whole route
+    map.fitBounds(L.polyline(routePath).getBounds(), { padding: [50, 50] });
+
+    // Start animation
+    startAnimation();
+  } catch (error) {
+    console.error('Routing API error:', error);
+    // Fallback to simple straight line
+    routePath = [START, END];
+    L.polyline(routePath, { color: '#0d7a5f', weight: 6 }).addTo(map);
+    startAnimation();
+  }
+}
+
+// ══════════════ ANIMATION ALONG THE ROUTE ══════════════
+function startAnimation() {
+  if (routePath.length === 0) return;
+
+  // Place rider at first point
+  riderMarker = L.marker(routePath[0], { icon: riderIcon }).addTo(map);
+  currentPathIndex = 0;
+
+  // Move to next point every 80 ms
+  const interval = 80; // milliseconds
+  setInterval(() => {
+    if (currentPathIndex < routePath.length - 1) {
+      currentPathIndex++;
+      const nextLatLng = routePath[currentPathIndex];
+      riderMarker.setLatLng(nextLatLng);
+
+      // Calculate heading (rotation)
+      const prev = routePath[currentPathIndex - 1];
+      const angle = Math.atan2(
+        nextLatLng[1] - prev[1],
+        nextLatLng[0] - prev[0]
+      ) * (180 / Math.PI);
+      riderMarker.setRotationAngle(angle);
+    } else {
+      // Reached destination
+      document.getElementById('riderStatus').textContent = 'Arrived';
+      document.getElementById('etaDisplay').textContent = '';
+    }
+  }, interval);
+}
+
+// ══════════════ SIMULATED STATUS UPDATES ══════════════
+setTimeout(() => {
+  document.getElementById('riderStatus').textContent = 'Rider is nearby';
+  document.getElementById('etaDisplay').textContent = '1 min away';
+}, 8000);
+setTimeout(() => {
+  document.getElementById('riderStatus').textContent = 'Almost there';
+  document.getElementById('etaDisplay').textContent = 'Arriving now';
+}, 16000);
+
+// ══════════════ START EVERYTHING ══════════════
+loadRoute();
+</script>
+
+</body>
+</html>
