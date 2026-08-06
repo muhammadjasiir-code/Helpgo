@@ -1,0 +1,5 @@
+[26-Jul-2026 18:43:05 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: Data truncated for column 'status' at row 1 in /home/lchwnsbw/public_html/owner/test_verify.php:11
+Stack trace:
+#0 /home/lchwnsbw/public_html/owner/test_verify.php(11): mysqli_query(Object(mysqli), 'UPDATE orders S...')
+#1 {main}
+  thrown in /home/lchwnsbw/public_html/owner/test_verify.php on line 11
